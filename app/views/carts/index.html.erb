@@ -1,0 +1,19 @@
+<h1>Listing carts</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  
+  <% @carts.each do |cart| %>
+  	<% cart.line_items.each do |item| %>
+  		<%= item.product.title %> &nbsp;&nbsp;&nbsp;<%= item.quantity %><br />
+  	<% end %>
+  <% end %>
+
+
+</table>
+
+

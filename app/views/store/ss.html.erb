@@ -1,0 +1,13 @@
+<%= Time.now %>
+<h2>我是ss页面啊</h2>
+
+<% content_for :head do %>
+	ss = > lsdjf
+<% end %>
+
+<%= render(:partial => 'left', :object => @ss, :locals =>
+	{
+		:java => 'java', :ce => 'C#'
+	}
+) %>
+

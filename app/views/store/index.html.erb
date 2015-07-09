@@ -1,0 +1,27 @@
+<% if notice %>
+	<p id="notice">
+		<%= notice %>
+	</p>
+<% end %>
+
+<h1>Your Pragmatice Catalog </h1>
+
+<p class="cx">我是红色的</p>
+<p>访问次数：<%= @counter %></p>
+
+<% @products.each do |product| %>
+	<div class="entry">
+		<%= link_to image_tag(product.image_url), line_items_path(:product_id => product),
+			html_options = {:method => :post} %>
+		
+		<h3><%= product.title %></h3>
+		<%= sanitize(product.description) %>
+		<div class="price_line">
+			<span class="price">
+				<%= number_to_currency(product.price) %>
+			</span>
+			<%= button_to "添加到购物车", line_items_path(:product_id => product), :remote => true %>
+		</div>
+		
+	</div>
+<% end %>

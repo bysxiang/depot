@@ -1,0 +1,13 @@
+<h2>你的购物车</h2>
+<table>
+	<%= render(@cart.line_items) %>
+	<tr class="total_line">
+		<td colspan="2">总数</td>
+		<td class="total_cell">
+			<%= number_to_currency(@cart.total_price) %>
+		</td>
+	</tr>
+</table>
+
+<%= button_to "趣支付", new_order_path, :method => :get %>
+<%= button_to "清空购物车", @cart, :method => :delete, :confirm => '确认清空购物车' %>

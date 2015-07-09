@@ -1,0 +1,4 @@
+<h2><%= page_title %></h2>
+<h3><%= @picture.comment %></h3>
+
+<img src="<%= url_for(:action => 'picture', :id => @picture.id) %>"/>
